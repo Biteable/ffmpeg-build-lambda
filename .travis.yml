@@ -33,4 +33,4 @@ deploy:
   file: ffmpeg-build-lambda.tar.gz
   skip_cleanup: true
   on:
-    repo: Biteable/ffmpeg-build-lambda
+    tags: true
