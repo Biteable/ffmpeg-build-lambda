@@ -8,7 +8,6 @@ addons:
     packages:
     - figlet
     - frei0r-plugins-dev
-    #- libass-dev
     - libfontconfig-dev
     - libfribidi-dev
     - libmp3lame-dev
@@ -26,12 +25,12 @@ addons:
     - libxvidcore-dev
     - texinfo
     - yasm
-script: ./build.sh
+script: "./build.sh"
 deploy:
   provider: releases
   api_key:
-    secure: HAcyIT0r9NSo5jmfPK3ce/U30BGXwKgrz+4f7usrkyJFYHvQW8fHgxIdrkJVEzQfsFtkAkAnELKkK2+F0hMXccuUlWoH7qWxQxmTor2Kl2YVin5V+lqlI4qGyOlJ05eI5MSH+dQ3ktF8szXtxPjTuVPOTjw+DFqLExhxFGLwZRT8J1OvLkgtKYXYO44FG4T3x3MGfRySU6+x5FNPoucKGU7CQNEOssKRRupSgCwjRNmTrtETe+NZRvncSxijDcpND1j63PCOtmyEPuESFzUHj97ogrMPqK1dsplJ2WtsIjLtdShpSx9e18L8Eu3FE/T8AZUlAUDlMRdOjgEqJNgvMAHvnWmqdF2ZLqI8QG4gqh8ijXscCseS5CyU5erB7OgdAbsEelH2seYDj0VoijHpUPke1XCex8IDm5Eh3hb/oj0ag6tnh7tTu8imMItYhZuGncTOxL3f9mEvXYRQnppN677asgnMLfli17wtRvZjn3iT+uKDO1gGifRRS2ldHX2JSQvcdxBw77+/exPkGaR95Q/2l1zwV9fX9P9L/Ung/iSzRFI6pIMQ25khmRn3XTH6rCms5bKD4a8gOdQYAD3gCFWCLScb0Gw63Rnobhlo5W6k9lblqNoBCoWFSlxTkv8coqK6j9i65odtHQU79Nqpf2wZAJmwlZpcEdhQ5PdiLrY=
+    secure: d73dh08dGNowoKa+C4Z3wGuIIfXMy9vkZypvo/8RAsnqSRRzsRiIby48y3auVkpG7jII28puNRspnrm4fnWmnBKgRUlCH8Jmy0VExiiIZdc0Ta7bxR8rwni8W6O83fHfXQ4WcYnWJKhrY3w6rwcMdQRzBEvddccYXa/C0pU9Iw+JVvKG9nvd9NaYjZgAvdw3Xlm6G4Q5xYQYB2lnnJDrLeO1HGNUGs5+M6KYnalZC9kdJ/QlqGL7QuqO3XRCRlGxiy9LEI4tueKYO3yYNWfuUmlT77q65/ANPUDWSbFpPFplwVMD3UkkfI4EysxkoFYci4VQA+O6251Ovtt2DxFYBhW3M57jbmxhKXZNTch/hYvICmWksD8zWSCcGzT7hJU/q/ec59sszEey7KmYViO8wGdruruDknLHiOuxhmqW+81iQJOrGrfHd6oRQM0MPymK5+4h96LbH2J/7O7gitwkRZQFcON5c8fUPm9+ffVOrfHk1/0AZT0DVyESzLqA2+Tgk+qSliWYogqBg7CSKRaPpZ+xmvb3UQlVDPt0rPHTK/4nkkOOkMIOV/GAw05fNF3YvuTWbk/8ZUua9oAWE0vuEuYDy77kwMGNbfFjrVgVP0W6HZy9q0JuwwVg2gKzyfjcvm0e9I6amlODRCmumsWeYFAiHjIlgZl2usoFkiO9f6w=
   file: ffmpeg-build-lambda.tar.gz
   skip_cleanup: true
   on:
-    tags: true
+    repo: Biteable/ffmpeg-build-lambda
