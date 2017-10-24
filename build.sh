@@ -62,22 +62,20 @@ make install
 make clean
 
 args=(
-	--disable-shared
 	--enable-static
 	--disable-debug
 	--disable-runtime-cpudetect
 	--disable-ffplay
 	--disable-ffserver
 	--disable-doc
-	--disable-network
 	--disable-devices
 
 	# Protocols
-	--disable-protocols
 	--enable-protocol=file
 	--enable-protocol=pipe
 	--enable-protocol=tee
 	--enable-protocol=http
+	--enable-protocol=https
 
 	# Libraries
 	--enable-libmp3lame
@@ -92,8 +90,8 @@ args=(
 	--enable-libspeex
 	--enable-libtheora
 	--enable-libvorbis
-	#--enable-libsoxr
-	#--enable-libfribidi
+        --enable-openssl
+        --enable-nonfree
 
 	# GPL
 	--enable-gpl

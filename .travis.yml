@@ -17,6 +17,7 @@ addons:
     - libopus-dev
     - libsoxr-dev
     - libspeex-dev
+    - libssl-dev
     - libtheora-dev
     - libvorbis-dev
     - libvo-amrwbenc-dev
