@@ -2,16 +2,12 @@ language: c
 cache: ccache
 compiler: gcc
 dist: trusty
-sudo: required
-env:
-  global:
-  - COMMIT_AUTHOR_EMAIL: "barrett.harber@gmail.com"
+sudo: false
 addons:
   apt:
     packages:
     - figlet
     - frei0r-plugins-dev
-    #- libass-dev
     - libfontconfig-dev
     - libfribidi-dev
     - libmp3lame-dev
@@ -29,16 +25,12 @@ addons:
     - libxvidcore-dev
     - texinfo
     - yasm
-before_install:
-- openssl aes-256-cbc -K $encrypted_db3a50dc7bb3_key -iv $encrypted_db3a50dc7bb3_iv -in deploy_key.enc -out deploy_key -d
-- git config user.name "Travis CI"
-- git config user.email "$COMMIT_AUTHOR_EMAIL"
-script: ./build.sh
+script: "./build.sh"
 deploy:
   provider: releases
   api_key:
-    secure: RIPh5vyMmcdncCFXAkNgC1EF/JTYqrdN/sEcaTQ3w5ek4/igL/N21hKj5U5EAu1DTWfwdmIZ8Z0VCzz3ktftlDNFl5bWrMpo+D0A2J6Gs/neOxZYDRubB03WnB+fuQamshgeb32Mng1r3pudxAp3zlGTYhpYNy1u4bPShjtF7SdEqM0TxgV4Xv4zjq57xYovXUQippqEIokgYLt/pHZZ1lOvYuQbCK/s87QXemc4T5crM65TfCO+gooftQJs5aybmtdztkbnG40kHbuQzGopKb1kO4VTEEOmkADs+YMMuoCaivAiPTeF5dhmiBZsksJJfghfETs3hqb5I/bh0t5cBnMiLYPOussObQ7Y3f/rs8SEDM4gfAE6ATApOZfCKdQHK1KIbgesybt1Y29lSwnk3737kLgrPUnB2eq8h2eZjKex1BV5nCUYipbRaqvw3JDMPaerK7Cx4UWJkme0sc6D/TQxAqCyRWuEyK04qASui0ezpy06qTLuWd81kHbm7NgXdawyTtwsF99zf7ixiU6ymPJKw43O5puTHmRsUphfkgyc+48dIWMvZjSWhHDGyLs963dlc7isx65t8Y/ELbZrtNSpzJTBX21ibfTa04dBrYGyGGe/4EAylcalQYy0+WPIUjsZ8PBu0Yzn+ymBfcOV84voE5UcHMf4TnQ1OicjZWA=
+    secure: d73dh08dGNowoKa+C4Z3wGuIIfXMy9vkZypvo/8RAsnqSRRzsRiIby48y3auVkpG7jII28puNRspnrm4fnWmnBKgRUlCH8Jmy0VExiiIZdc0Ta7bxR8rwni8W6O83fHfXQ4WcYnWJKhrY3w6rwcMdQRzBEvddccYXa/C0pU9Iw+JVvKG9nvd9NaYjZgAvdw3Xlm6G4Q5xYQYB2lnnJDrLeO1HGNUGs5+M6KYnalZC9kdJ/QlqGL7QuqO3XRCRlGxiy9LEI4tueKYO3yYNWfuUmlT77q65/ANPUDWSbFpPFplwVMD3UkkfI4EysxkoFYci4VQA+O6251Ovtt2DxFYBhW3M57jbmxhKXZNTch/hYvICmWksD8zWSCcGzT7hJU/q/ec59sszEey7KmYViO8wGdruruDknLHiOuxhmqW+81iQJOrGrfHd6oRQM0MPymK5+4h96LbH2J/7O7gitwkRZQFcON5c8fUPm9+ffVOrfHk1/0AZT0DVyESzLqA2+Tgk+qSliWYogqBg7CSKRaPpZ+xmvb3UQlVDPt0rPHTK/4nkkOOkMIOV/GAw05fNF3YvuTWbk/8ZUua9oAWE0vuEuYDy77kwMGNbfFjrVgVP0W6HZy9q0JuwwVg2gKzyfjcvm0e9I6amlODRCmumsWeYFAiHjIlgZl2usoFkiO9f6w=
   file: ffmpeg-build-lambda.tar.gz
   skip_cleanup: true
   on:
-    tags: true
+    repo: Biteable/ffmpeg-build-lambda
