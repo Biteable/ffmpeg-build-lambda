@@ -83,6 +83,7 @@ args=(
 	--enable-protocol=file
 	--enable-protocol=pipe
 	--enable-protocol=tee
+	--enable-protocol=http
 
 	# Libraries
 	--enable-libmp3lame
